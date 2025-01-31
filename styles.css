@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #0694aa;
+    color: #fff;
+}
+
+.wrapper {
+    background-color: #0A0A0A;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+    width: 400px; 
+    max-width: 500px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    min-height: auto;
+    overflow: hidden; /* Empêche le débordement */
+    transition: all 0.3s ease-in-out;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    background-color: #252525;
+    padding: 15px;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+    margin-bottom: 5px; /* Réduction de la marge en bas */
+}
+
+input, button, #download {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 12px;
+    outline: none;
+    border-radius: 20px;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 14px;
+}
+
+button, #download {
+    background-color: #0694aa;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover, #download:hover {
+    background-color: #0ed1d0;
+    color: #000;
+}
+button:hover {
+    background-color: #0ed1d0; /* Changement de couleur au survol */
+    color: #000;
+    transform: scale(1.05); /* Effet de zoom au survol */
+}
+.result {
+    display: flex;
+    flex-direction: row; /* Disposition en ligne */
+    align-items: center;
+    justify-content: center; /* Centre dans le wrapper */
+    gap: 15px; /* Espace entre QR Code et bouton */
+    width: 100%;
+    opacity: 0;
+    transform: scale(0.95);
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease, height 0.3s ease-in-out;
+    flex-wrap: wrap; /* Permet au contenu de s'adapter si la largeur est trop petite */
+}
+.result-box {
+    display: flex;
+    flex-direction: row; /* Disposition en ligne */
+    align-items: center;
+    justify-content: center; /* Centre les éléments horizontalement */
+    gap: 37px; /* Espace entre le QR Code et le bouton */
+    width: 100%; /* Prend toute la largeur du wrapper */
+    padding: 10px; /* Ajoute un peu de padding pour l'espace intérieur */
+    background-color: #252525; /* Couleur de fond pour la boîte */
+    border-radius: 20px; /* Coins arrondis */
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Bordure légère */
+    margin-top: 10px; /* Espace au-dessus de la boîte */
+}
+.result.active {
+    opacity: 1;
+    transform: scale(1);
+    height: auto;
+    overflow: visible;
+    margin-top: 10px;
+}
+
+#download {
+    display: none;
+    padding: 10px 20px;
+    background: #0694aa;
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: auto;
+    min-width: 120px;
+    max-width: 150px; /* Empêche le bouton de devenir trop large */
+    white-space: nowrap; /* Empêche le texte de sauter à la ligne */
+    text-overflow: ellipsis; /* Si le texte est trop long, il sera coupé avec "..." */
+    overflow: hidden;
+}
+
+#download:hover {
+    background: #0ed1d0;
+    color: #000;
+    transform: scale(1.05);
+}
+
+#qrcodeImage {
+    width: 120px; /* Réduction de la taille du QR Code */
+    height: auto;
+    border-radius: 15px;
+    border: 3px solid #fff;
+    padding: 5px;
+    background: #fff;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+button {
+    margin-bottom: 5px;
+}
